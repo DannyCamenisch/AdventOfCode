@@ -3,3 +3,6 @@
 
 # Ignore secret session cookie
 secret_session_cookie.txt
+
+# Ignore .vscode
+.vscode
