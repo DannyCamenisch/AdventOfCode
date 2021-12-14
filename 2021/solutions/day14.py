@@ -36,7 +36,7 @@ def react(polymerStr, rules, steps):
         charCount[p[0]] += polymer[p]
         charCount[p[1]] += polymer[p]
 
-    return max(charCount.values()) - min(charCount.values())
+    return int((max(charCount.values()) - min(charCount.values()) + 1) / 2)
 
 # Part 1
 res = react(polymer, rules, 10)
