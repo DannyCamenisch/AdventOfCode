@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-from sys import builtin_module_names
 from utils import advent
 from math import prod
 
@@ -41,8 +40,6 @@ def parse_bitcode(bitcode):
 
             bitcode = bitcode[5:]
             
-        #res.append(int(numStr, base=2))
-
     else: # package is a operator
         lengthID = int(bitcode[6:7], base=2)
         lit = []
@@ -85,5 +82,4 @@ res, _ = parse_bitcode(bitcode)
 advent.submit_answer(1, versionSum)
 
 # Part 2
-
 advent.submit_answer(2, res)

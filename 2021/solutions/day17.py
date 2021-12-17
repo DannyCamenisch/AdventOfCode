@@ -4,7 +4,11 @@ from utils import advent
 
 advent.setup(2021, 17)
 
-# target area: x=281..311, y=-74..-54
+# hardcoded input
+targetMinX = 281
+targetMaxX = 311
+targetMinY = -74
+targetMaxY = -54
 
 def launch_probe(x, y):
     curX = 0
@@ -24,23 +28,24 @@ def launch_probe(x, y):
 
         maxY = max(maxY, curY)
 
-        if curX >= 281 and curX <= 311 and curY <= -54 and curY >= -74:
+        if curX >= targetMinX and curX <= targetMaxX and curY <= targetMaxY and curY >= targetMinY:
             return True, maxY
 
-        if curX > 311 or curY < -74:
+        if curX > targetMaxX or curY < targetMinY:
             return False, 0
 
 
 # Part 1
 maxY = 0
 count = 0
-for x in range(0, 312):
-    for y in range(-75, 1001):
-        res, tmp = launch_probe(x, y)
+
+for x in range(0, targetMaxX + 1):
+    for y in range(targetMinY, 100):
+        res, tmpY = launch_probe(x, y)
         
         if res:
             count += 1
-            maxY = max(maxY, tmp)
+            maxY = max(maxY, tmpY)
 
 advent.submit_answer(1, maxY)
 
