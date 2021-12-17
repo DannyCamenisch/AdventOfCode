@@ -5,7 +5,7 @@ from utils import advent
 advent.setup(2021, 2)
 fin = advent.get_input()
 
-commands = tuple(fin.readlines())
+commands = fin.readlines()
 
 # Part 1
 distance = 0

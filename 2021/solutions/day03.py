@@ -8,7 +8,7 @@ fin = advent.get_input()
 numbers = tuple(map(str, fin.readlines()))
 
 # Part 1 
-d = [ 0 for x in range(len(numbers[0])-1)]
+d = [0 for _ in range(len(numbers[0])-1)]
 
 for i in range(len(numbers[0])):
     for j in range(len(numbers)):
