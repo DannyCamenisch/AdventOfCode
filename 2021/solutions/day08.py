@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-from os import linesep
 from itertools import permutations
 from utils import advent
 
@@ -16,13 +15,13 @@ for line in lines:
     out = line.split("|")[1].strip()
     
     for c in out.split(" "):
-        if len(c) == 2 or len(c) == 3 or len(c) == 4 or len(c) == 7:
+        if len(c) in {2, 3, 4, 7}:
             sum += 1
 
 advent.submit_answer(1, sum)
 
 # Part 2
-def evalSeg(input, perm):
+def evalSegment(input, perm):
     out = ""
     for i in input:
         cod = ""
@@ -57,11 +56,13 @@ def evalSeg(input, perm):
     return int(out)
 
 sum = 0
+perms = permutations(["a", "b", "c", "d", "e", "f", "g"])
+
 for line in lines:
     input = line.split("|")[0].strip().split(" ")
     output = line.split("|")[1].strip().split(" ")
 
-    for perm in permutations(["a", "b", "c", "d", "e", "f", "g"]):
-        if evalSeg(input, perm) != -1:
-            sum += evalSeg(output, perm)
+    for p in perms:
+        if evalSegment(input, p) != -1:
+            sum += evalSegment(output, p)
 advent.submit_answer(2, sum)
