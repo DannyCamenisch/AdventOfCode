@@ -6,3 +6,6 @@ secret_session_cookie.txt
 
 # Ignore .vscode
 .vscode
+
+# Ignore __pycache__
+__pycache__

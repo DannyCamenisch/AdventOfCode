@@ -54,6 +54,7 @@ def setup(year, day):
 		with open('secret_session_cookie.txt') as f:
 			SESSION = f.read().rstrip()
 			S.cookies.set('session', SESSION)
+			S.user_agent = 'https://github.com/DannyCamenisch/AdventOfCode by danny.camenisch@me.com'
 
 def get_input(fname=None, mode='r'):
 	check_setup_once()
