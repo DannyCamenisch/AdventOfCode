@@ -6,8 +6,6 @@ from copy import deepcopy
 advent.setup(2022, 5)
 fin = advent.get_input()
 
-num_stacks = 9
-
 lines = [line for line in fin.read().split('\n')]
 
 stacks = []
