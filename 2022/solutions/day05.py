@@ -14,7 +14,7 @@ for line in lines:
     if line == '':
         break
 
-    stack_size = (len(line)+1 )// 4
+    stack_size = (len(line) + 1)// 4
 
     while len(stacks) < stack_size:
         stacks.append([])
