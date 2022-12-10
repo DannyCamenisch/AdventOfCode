@@ -44,7 +44,7 @@ for d, n in cmds:
 
         visited.add(tail)
 
-advent.submit_answer(1, len(visited)) # 6037
+advent.submit_answer(1, len(visited))
 
 # Part 2
 
