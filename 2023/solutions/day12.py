@@ -4,10 +4,9 @@ from utils import advent
 from functools import cache
 
 advent.setup(2023, 12)
-# fin = advent.get_input()
+fin = advent.get_input()
 
-with open("2023/inputs/2023_12.txt") as fin:
-    lines = [l.split() for l in fin.read().strip().split("\n")]
+lines = [l.split() for l in fin.read().strip().split("\n")]
 
 springs = [(group, tuple(map(int, sizes.split(",")))) for group, sizes in lines]
 
