@@ -3,13 +3,11 @@
 import copy
 from math import prod
 from utils import advent
-from tqdm.auto import tqdm
 
 advent.setup(2023, 19)
-# fin = advent.get_input()
+fin = advent.get_input()
 
-with open('2023/inputs/2023_19.txt') as fin:
-    r, p = fin.read().split('\n\n')
+r, p = fin.read().split('\n\n')
 
 r = r.strip().split('\n')
 p = p.strip().split('\n')
