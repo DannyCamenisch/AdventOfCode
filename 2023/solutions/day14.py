@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 
-from utils import advent
 from itertools import count
+
+from utils import advent
 
 advent.setup(2023, 14)
 fin = advent.get_input()
@@ -9,8 +10,9 @@ fin = advent.get_input()
 grid = fin.readlines()
 
 board = {i + 1j * j: c for i, line in enumerate(grid) for j, c in enumerate(line)}
-blocked = {k for k, v in board.items() if v == '#'}
-stones = {k for k, v in board.items() if v == 'O'}
+blocked = {k for k, v in board.items() if v == "#"}
+stones = {k for k, v in board.items() if v == "O"}
+
 
 def tilt(s, d=1):
     while True:
@@ -20,13 +22,16 @@ def tilt(s, d=1):
             return new_s
         s = new_s
 
+
 def load(s):
     return sum(len(grid) - z.real for z in s)
+
 
 def cycle(s):
     for d in (1, 1j, -1, -1j):
         s = tilt(s, d)
     return s
+
 
 # Part 1
 result_1 = int(load(tilt(stones)))

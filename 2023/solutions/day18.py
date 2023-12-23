@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 
-from utils import advent
 import numpy as np
+
+from utils import advent
 
 advent.setup(2023, 18)
 fin = advent.get_input()
@@ -23,17 +24,17 @@ corners_hex = [(0, 0)]
 
 for i in instructions:
     x, y, z = lut[i[0]], int(i[1]), i[2]
-    
+
     border += y
     corners.append((corners[-1][0] + x[0] * y, corners[-1][1] + x[1] * y))
-    
+
     x = list(lut.values())[int(z[-2])]
     y = int(z[2:7], 16)
-    
+
     border_hex += y
     corners_hex.append((corners_hex[-1][0] + x[0] * y, corners_hex[-1][1] + x[1] * y))
-    
-    
+
+
 def area(corners, border):
     corners = np.array(corners)
 
@@ -47,8 +48,9 @@ def area(corners, border):
 
     return int(a) + int(border / 2) + 1
 
-# Part 1 
-result_1 = area(corners, border) 
+
+# Part 1
+result_1 = area(corners, border)
 advent.submit_answer(1, result_1)
 
 # Part 2

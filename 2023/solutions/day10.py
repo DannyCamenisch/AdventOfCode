@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 
 from collections import deque
-from utils import advent
 
 import networkx as nx
+
+from utils import advent
 
 advent.setup(2023, 10)
 fin = advent.get_input()
@@ -36,8 +37,8 @@ while q:
             q.append((new_z, d + 1))
             seen.add(new_z)
         removed |= {2 * z, 2 * z + dz, 2 * z + 2 * dz}
-        
-# Part 1 
+
+# Part 1
 advent.submit_answer(1, result_1)
 
 # Part 2
@@ -53,8 +54,8 @@ for z in removed:
     graph.remove_node(z)
 
 result_2 = sum(
-        z.real % 2 == 0 and z.imag % 2 == 0
-        for z in set.union(*(x for x in nx.connected_components(graph) if -1 - 1j not in x))
-    )
+    z.real % 2 == 0 and z.imag % 2 == 0
+    for z in set.union(*(x for x in nx.connected_components(graph) if -1 - 1j not in x))
+)
 
 advent.submit_answer(2, result_2)
